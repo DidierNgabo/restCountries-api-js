@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rest Countries</title>
+  </head>
+  <body class="bg-blue-100">
+    <div class="w-11/12 mx-auto mt-10 md:flex justify-between items-center">
+      <div class="relative">
+        <input
+          type="text"
+          class="input"
+          placeholder="search for a country..."
+          id="search"
+        />
+        <button id="searchBtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="
+              h-6
+              w-6
+              text-gray-400
+              absolute
+              hover:text-red-300
+              top-6
+              right-11
+              md:right-4
+            "
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <select class="input bg-white" id="filter">
+        <option selected disabled value="">Filter By region</option>
+        <option value="africa">Africa</option>
+        <option value="americas">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+      </select>
+    </div>
+
+    <main
+      id="main"
+      class="w-11/12 mt-16 mx-auto p-4 md:grid md:grid-cols-3 md:gap-10"
+    >
+      <!-- <div class="card">
+        <img
+          class="card-img"
+          src="https://via.placeholder.com/200x150"
+          alt="flag"
+        />
+        <h2 class="card-title">Afghanistan</h2>
+        <div class="text-container">
+          <h3><span class="font-semibold">Population</span>:1000</h3>
+          <p><span class="font-semibold">Region</span>:Asia</p>
+          <p><span class="font-semibold">Capital</span>:Kabul</p>
+          <h2 class="text-lg font-semibold">Afghanistan</h2>
+          <h3><span class="font-semibold">Population</span>:1000</h3>
+          <p><span class="font-semibold">Region</span>:Asia</p>
+          <p><span class="font-semibold">Capital</span>:Kabul</p>
+        </div>
+      </div> -->
+    </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

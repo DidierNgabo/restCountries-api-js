@@ -1,0 +1,25 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.input {
+  @apply h-10 mt-4 w-11/12 shadow-md md:w-60 p-2 border;
+}
+
+.card {
+  @apply shadow-xl mt-4  rounded-lg;
+}
+
+.card-title {
+  @apply text-lg mt-4 text-center font-semibold;
+}
+
+.card-img {
+  @apply w-full h-60 rounded-t-lg;
+}
+
+.text-container {
+  @apply mt-4 w-full p-2 grid grid-cols-2;
+}
