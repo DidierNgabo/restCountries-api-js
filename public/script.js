@@ -94,10 +94,14 @@ const getData = async () => {
 
 const getCountriesByRegion = (region) => {
   console.log(region);
-  let newCountries = countries.filter(
-    (country) => country.region.toLowerCase() === region
-  );
-  populateMain(newCountries);
+  if (region == '') {
+    populateMain(countries);
+  } else {
+    let newCountries = countries.filter(
+      (country) => country.region.toLowerCase() === region
+    );
+    populateMain(newCountries);
+  }
 };
 
 const getCountriesByName = async (name) => {
