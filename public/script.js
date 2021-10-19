@@ -113,11 +113,14 @@ const getCountriesByName = async (name) => {
         `https://restcountries.com/v3.1/name/${name}`
       );
       if (response) {
+        console.log(response);
         let searchedCountry = response.data;
         console.log(searchedCountry);
         populateMain(searchedCountry);
       }
     } catch (error) {
+      main.innerHTML =
+        '<h1 class="text-xl font-bold text-center">Opps Country not found type again...</h1>';
       console.log(error);
     }
   }
@@ -132,6 +135,7 @@ const populateMain = (countries) => {
 };
 
 window.onload = () => {
+  loader();
   getData();
 };
 
@@ -142,5 +146,65 @@ filter.addEventListener('change', (e) => {
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   console.log(search.value);
+  main.innerHTML = loading;
+  loader();
   getCountriesByName(search.value);
 });
+
+const loading = `
+<h1 class="ml8">
+<span class="circle circle-white"></span>
+<span class="circle circle-dark"></span>
+<span class="circle circle-container"
+  ><span class="circle circle-dark-dashed"></span
+></span>
+</h1>
+`;
+
+function loader() {
+  anime
+    .timeline({ loop: true })
+    .add({
+      targets: '.ml8 .circle-white',
+      scale: [0, 3],
+      opacity: [1, 0],
+      easing: 'easeInOutExpo',
+      rotateZ: 360,
+      duration: 1100,
+    })
+    .add({
+      targets: '.ml8 .circle-container',
+      scale: [0, 1],
+      duration: 1100,
+      easing: 'easeInOutExpo',
+      offset: '-=1000',
+    })
+    .add({
+      targets: '.ml8 .circle-dark',
+      scale: [0, 1],
+      duration: 1100,
+      easing: 'easeOutExpo',
+      offset: '-=600',
+    })
+    .add({
+      targets: '.ml8 .letters-left',
+      scale: [0, 1],
+      duration: 1200,
+      offset: '-=550',
+    })
+    .add({
+      targets: '.ml8',
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      delay: 1400,
+    });
+
+  anime({
+    targets: '.ml8 .circle-dark-dashed',
+    rotateZ: 360,
+    duration: 8000,
+    easing: 'linear',
+    loop: true,
+  });
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css" />
     <title>Rest Countries</title>
   </head>
   <body class="bg-blue-100">
@@ -57,25 +58,16 @@
       id="main"
       class="w-11/12 mt-16 mx-auto p-4 md:grid md:grid-cols-3 md:gap-10"
     >
-      <!-- <div class="card">
-        <img
-          class="card-img"
-          src="https://via.placeholder.com/200x150"
-          alt="flag"
-        />
-        <h2 class="card-title">Afghanistan</h2>
-        <div class="text-container">
-          <h3><span class="font-semibold">Population</span>:1000</h3>
-          <p><span class="font-semibold">Region</span>:Asia</p>
-          <p><span class="font-semibold">Capital</span>:Kabul</p>
-          <h2 class="text-lg font-semibold">Afghanistan</h2>
-          <h3><span class="font-semibold">Population</span>:1000</h3>
-          <p><span class="font-semibold">Region</span>:Asia</p>
-          <p><span class="font-semibold">Capital</span>:Kabul</p>
-        </div>
-      </div> -->
+      <h1 class="ml8">
+        <span class="circle circle-white"></span>
+        <span class="circle circle-dark"></span>
+        <span class="circle circle-container"
+          ><span class="circle circle-dark-dashed"></span
+        ></span>
+      </h1>
     </main>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
